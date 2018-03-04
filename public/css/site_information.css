@@ -1,0 +1,112 @@
+/*公共部分*/
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+ul,ol{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+/*头部开始*/
+
+.site-information-head{
+
+    width: 1250px;
+    height: 100px;
+    background-color: #e6f2fb;
+    margin: 0 auto;
+    border: 1px solid #cdcdcd;
+    position: relative;
+}
+.site-information-head-logo{
+    width: 140px;
+    height: 65px;
+
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+.site-information-head-nav{
+
+
+    width: 1090px;
+    height: 40px;
+    position: absolute;
+    top:56px;
+    left: 160px;
+    border-bottom: 4px solid #1297c9;
+
+}
+.site-information-head-nav li{
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    float: left;
+    line-height: 40px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+.site-information-head-nav li a{
+
+    font-size: 15px;
+    color: #1297c9;
+    font-weight: bold;
+}
+/*头部右边*/
+.site-information-head-welcome{
+
+    position: absolute;
+    top: 20px;
+    left: 980px;
+}
+.welcome-border{
+
+    display: block;
+   width: 60px;
+    height: 25px;
+    background: #f6f9fa;
+    text-align: center;
+    border:  1px solid #cdcdcd;
+    line-height: 25px;
+    position: absolute;
+    top: -5px;
+    left: 185px;
+}
+.color1-999{
+    color: #999;
+}
+
+.site-information-content{
+    width: 1250px;
+    height: 650px;
+    position: relative;
+    margin: 3px auto;
+    border: 1px solid #b5cfd9;
+
+
+
+}
+.site-information-content-left{
+    width: 154px;
+    height: 650px;
+    background-color: #e6f2fb;
+    border-right: 6px solid #cae4f5;
+}
+.site-information-content-right{
+
+    width: 1088px;
+    height: 650px;
+    border: 1px solid #e6f2fb;
+    position: absolute;
+    top: 0;
+    left: 160px;
+}
+
+
+

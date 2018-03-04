@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>梅如是――古典个人博客模板</title>
+<meta name="keywords" content="古典网站模板,个人网站模板,个人博客模板,博客模板,css3,html5,网站模板" />
+<meta name="description" content="这是一个古典风格的css3 html5 网站模板" />
+<link href="public/css/styles.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="public/js/modernizr.js"></script>
+<![endif]-->
+
+
+
+  <link  href="public/editor/css/editormd.css" rel="stylesheet"/>
+  <script src="public/editor/js/jquery.min.js"></script>
+  <script src="public/editor/editormd.min.js"></script>
+  <script type="text/javascript">
+      $(function() {
+          testEditor = editormd("test-editormd", {
+              width   : "90%",
+              height  : 500,
+              syncScrolling : "single",
+              path    : "public/editor/lib/"
+          });
+
+      });
+  </script>
+
+
+</head>
+<body>
+<article>
+  <header>
+    <div class="toptitle">
+      <h1>浣溪沙 梅花夢事</h1>
+      <p class="byline">――梅如是</p>
+    </div>
+    <object id="swftitlebar" data="public/images/79514.swf" width="100%" height="220" type="application/x-shockwave-flash">
+      <param name="allowScriptAccess" value="always">
+      <param name="allownetworking" value="all">
+      <param name="allowFullScreen" value="true">
+      <param name="wmode" value="transparent">
+      <param name="menu" value="false">
+      <param name="scale" value="noScale">
+      <param name="salign" value="1">
+    </object>
+    <p class="sign">收我南窗梦一帘,人间故事密封缄。迎将冷淡到江南。 身逐空花归净界,愿随清月落寒潭。红尘隔断两无堪。</p>
+  </header>
+  <div class="leftbox">
+
+
+
+
+
+
+    <div class="vcard box">
+      <h2>个人资料</h2>
+        <form action="index.php?c=article&a=picture" method="post" enctype="multipart/form-data">
+      <img src="{$head[0]['picture']}" class="photo">
+        <input type="file" name="file">
+        <input type="submit"value="上传头像">
+        </form>
+      <p class="fn">姓名：{$head[0]['username']}</p>
+      <p class="nickname">网名：DanceSmile | 即步非烟</p>
+      <p class="url">主页：{$head[0]['email']}</p>
+      <p class="address">现居：深圳市</p>
+      <p class="role">职业：网站设计，php开发</p>
+    </div>
+
+
+    <div class="blogclass box">
+      <h2>博客分类</h2>
+      <ul>
+        {if !empty($bkname)}
+        {foreach $bkname as $key=>$value}
+        <li><a href="index.php?c=article&a=blog1&id={$value['bid']}">{$value['bkname']}</a></li>
+        {/foreach}
+        {/if}
+      </ul>
+    </div>
+    <div class="friends box">
+      <h2>最近访客</h2>
+      <ul>
+        <li><a href="/"><img src="public/images/01.jpg"></a></li>
+        <li><a href="/"><img src="public/images/s3.jpg"></a></li>
+        <li><a href="/"><img src="public/images/s0.jpg"></a></li>
+        <li><a href="/"><img src="public/images/s2.jpg"></a></li>
+        <li><a href="/"><img src="public/images/s5.jpg"></a></li>
+        <li><a href="/"><img src="public/images/s6.jpg"></a></li>
+        <li><a href="/"><img src="public/images/s7.jpg"></a></li>
+        <li><a href="/"><img src="public/images/s8.jpg"></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="rightbox box">
+{if !empty($article)}
+    <h2>最新博文</h2>
+      <h2 class="title">{$article[0]['title']}</h2>
+    <h3 class="title">{$article[0]['content']}</h3>
+      {if !empty($article1)}
+      {foreach $article1 as $key=>$value}
+      <h2 class="title">{$value['content']}<br />{$value['time']}</h2>
+      {/foreach}
+      {/if}
+    <ul class="text">
+      <form action="index.php?c=article&a=discuss&id={$id}" method="post" method="post" enctype="multipart/form-data">
+        <div class="editormd" id="test-editormd">
+          <textarea style="display:none;" name="content">我这里显示内容</textarea>
+        </div>
+        <input type="submit" value="回复博文" />
+
+      </form>
+    </ul>
+       
+
+
+    <div class="textfoot"> <a href="/">阅读全文</a><a href="/">评论</a><a href="/">转载</a> </div>
+{else}
+
+    <form action="index.php?c=article&a=say&id={$id}" method="post" method="post" enctype="multipart/form-data">
+    <h3 class="title">标题：<input type="text" name="title" style="width: 300px;height: 20px"/></h3>
+    <ul class="text">
+
+      <div class="editormd" id="test-editormd">
+        <textarea style="display:none;" name="content">我这里显示内容</textarea>
+      </div>
+      <input type="submit" value="发表博客" />
+    </ul>
+
+    </form>
+    <div class="textfoot"> <a href="/">阅读全文</a><a href="/">评论</a><a href="/">转载</a> </div>
+    <div class="pages"><span>1</span><a href="/" hidefocus="">2</a><a href="/" hidefocus="">3</a><a href="/" class="next">下一页&gt;&gt;</a></div>
+    {/if}
+  </div>
+
+  <div class="blank"></div>
+  <div class="Copyright">
+    <ul>
+      <a href="/">帮助中心</a><a href="/">空间客服</a><a href="/">投诉中心</a><a href="/">空间协议</a>
+    </ul>
+    <p>Design by DanceSmile</p>
+  </div>
+</article>
+</body>
+</html>

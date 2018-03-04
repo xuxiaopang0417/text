@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>版块管理</title>
+    <link rel="stylesheet" type="text/css" href="public/css/site_information.css" />
+    <style>
+        /*中间左边代码样式*/
+        .site-information-content-left-1{
+            padding-left: 20px;
+        }
+
+        .site-information-content-left-1 li{
+            width: 140px;
+            height: 25px;
+            margin-bottom: 5px;
+
+
+        }
+        .site-information-content-left-1 li a{
+            color: #2366a8;
+        }
+        .site-information-content-left-1 li a:hover{
+            color: red;
+        }
+
+
+
+
+        /*中间右边的代码*/
+        .site-information-content-right-index3{
+            width: 1060px;
+            height: 650px;
+            margin: 0 auto;
+        }
+        .site-information-content-right-index3 li{
+
+
+            width: 1060px;
+            height: 40px;
+            border-bottom: 1px dashed #deeffb;
+            line-height:40px ;
+        }
+        .site-information-content-right-index3 li:hover{
+            background-color:#deeffb ;
+        }
+
+
+
+
+      /*第一个开始的文本框长度和背景色*/
+        .color-f7f8fd{
+            width: 60px;
+            background: #f7f8fd;
+        }
+        /*两个输入框的长度，并且进行了文字加粗*/
+        .color-f7f8fd-2{
+            width: 120px;
+            background: #f7f8fd;
+            font-weight: bold;
+        }
+        /*第三个输入框*/
+        .color-f7f8fd-3{
+            width: 120px;
+            background: #f7f8fd;
+
+        }
+        /*第二个不加粗文字的*/
+        .color-f7f8fd-4{
+            width: 120px;
+            background: #f7f8fd;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="site-information-head" >
+
+    <!--左边logo部分-->
+    <div  class="site-information-head-logo">
+        <img src="public/img/site_logo.jpg" width="150px" height="60px"/>
+    </div>
+
+
+    <!--中间部分-->
+    <div class="site-information-head-nav">
+
+        <ul>
+            <li ><a href="index.php?c=admin&a=site_index1" >站点信息</a></li>
+            <li><a href="index.php?c=admin&a=site_index2">用户管理</a></li>
+            <li style="background-color:#1297c9;"><a href="index.php?c=admin&a=site_index3" style="color: #fff;" >板块管理</a></li>
+            <li><a href="index.php?c=admin&a=site_index4">帖子管理</a></li>
+
+
+        </ul>
+
+
+    </div>
+
+    <div class="site-information-head-welcome">
+        <p><span class="color1-999">你好,创始人</span> admin <a href="#"><span class="color1-999">[退出]</span></a> <a href="#" class="welcome-border">站点首页</a></p>
+
+    </div>
+
+
+
+</div>
+
+
+
+
+<!--中间主体部分-->
+
+<div class="site-information-content">
+
+
+    <!--中间左边部分-->
+
+
+
+
+    <div class="site-information-content-left">
+        <div class="site-information-content-left-1">
+        <ul>
+            <li><a href="index.php?c=admin&a=site_index3"> ● 管理版块</a></li>
+            <li><a href="index.php?c=admin&a=site_index3_1"> ● 添加版块</a></li>
+
+        </ul>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--中间主体右边部分-->
+
+    <div class="site-information-content-right">
+        <div class="site-information-content-right-index3">
+            <h1 style="font-size: 20px; padding-top: 15px;color: #0099cc; height: 40px;border-bottom: 1px dashed #deeffb; ">版块管理</h1>
+            <form action="index.php?c=admin&a=report"method="post"enctype="multipart/form-data">
+                    <ul>
+                        <li>显示顺序
+                            <span style="padding-left: 70px;">版块名称</span>
+
+                        </li>
+                        {if !empty($plate)}
+                        {foreach $plate as $key=>$value}
+                        <li>
+                            <!--给一个隐藏域，这里主要实现功能修改，value值主要给定修改的某个值,[]以取数组形式-->
+                         <!--   <input type="hidden" name="bid[]"value="{$value['bid']}" />-->
+                            <!--给大板块一个删除的框name值是给板块的bid后面直接删除bid-->
+                            <input type="checkbox" name="chekbox[]" value="{$value['bid']}">
+
+
+
+
+                            <input type="text" name="bid[]" value="{$value['bid']}" class="color-f7f8fd" />
+                           <span  style="padding-left: 34px;"><input type="text" name="bkname[]" value="{$value['bkname']}" class="color-f7f8fd-2" /></span>
+                        </li>
+                        {/foreach}
+                        {/if}
+
+                        <li>
+                            <input type="submit" name="up"value="修改" />
+                            <input type="submit" name="del"value="删除" />
+                        </li>
+
+
+                    </ul>
+            </form>
+        </div>
+
+
+        </div>
+
+
+
+</div>
+
+</body>
+</html>
